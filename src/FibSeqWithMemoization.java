@@ -14,14 +14,6 @@ public class FibSeqWithMemoization {
 		System.out.println(fib(100));
 		
 		System.out.println();
-		
-//		System.out.println(fibWithMap(6));
-//		System.out.println(fibWithMap(7));
-//		System.out.println(fibWithMap(8));
-//		System.out.println(fibWithMap(46));
-//		System.out.println(fibWithMap(47));
-//		System.out.println(fibWithMap(50));
-
 	}
 
 	public static long fib(int n) {
@@ -35,19 +27,22 @@ public class FibSeqWithMemoization {
 		return fibArray[n];
 	}
 
-//	public static long fibWithMap(long i) {
-//		Map<Long, Long> fibMap = new HashMap<Long, Long>();
-//		if(i == 0 || i == 1) {
-//			return i;
-//		}
-//		if (fibMap.containsKey(i)) {
-//				return fibMap.get(i);
-//			}
-//		
-//		long fibForN = fibWithMap(i - 1) + fibWithMap(i - 2);
-//		fibMap.put(i, fibForN);
-//		
-//		return fibForN;
-//	}
+	/*
+	 * Another method that uses map
+	 * */
+	public static long fibWithMap(long i) {
+		Map<Long, Long> fibMap = new HashMap<Long, Long>();
+		if(i == 0 || i == 1) {
+			return i;
+		}
+		if (fibMap.containsKey(i)) {
+				return fibMap.get(i);
+			}
+		
+		long fibForN = fibWithMap(i - 1) + fibWithMap(i - 2);
+		fibMap.put(i, fibForN);
+		
+		return fibForN;
+	}
 
 }
