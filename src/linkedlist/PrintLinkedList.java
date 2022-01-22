@@ -9,4 +9,10 @@ public class PrintLinkedList {
 			current = current.next;
 		}
 	}
+	
+	public void printLinkedListUsingRecursion(LinkedList head) {
+		if(head == null) return;
+		System.out.println(head.value);
+		printLinkedListUsingRecursion(head.next);
+	}
 }
