@@ -10,7 +10,20 @@ public class SumOfLinkedList {
 		LinkedList nodeOne = linkedListOne;
 		LinkedList nodeTwo = linkedListTwo;
 		
-		
-		return null;
+		while (nodeOne != null || nodeTwo != null || carry != 0) {
+			int valueOne = (nodeOne != null) ? nodeOne.value : 0;
+			int valueTwo = (nodeTwo != null) ? nodeTwo.value : 0;
+			int sumOfValues = valueOne + valueTwo + carry;
+			
+			int newValue = sumOfValues % 10;
+			LinkedList newNode = new LinkedList(newValue);
+			currentNode.next = newNode;
+			currentNode = newNode;
+			
+			carry = sumOfValues / 10;
+			nodeOne = (nodeOne != null) ? nodeOne.next : null;
+			nodeTwo = (nodeTwo != null) ? nodeTwo.next : null;
+		}
+		return nextHeadPointer.next;
 	}
 }
