@@ -24,4 +24,17 @@ public class ZipperList {
 		
 		return head1;
 	}
+	
+	public LinkedList zipperListsWithRecursion(LinkedList head1, LinkedList head2) {
+		if(head1 == null && head2 == null) return null;
+		if(head1 == null) return head2;
+		if(head2 == null) return head1;
+		
+		var next1 = head1.next;
+		var next2 = head2.next;
+		head1.next = head2;
+		
+		head2.next = zipperListsWithRecursion(next1, next2);
+		return head1;
+	}
 }
