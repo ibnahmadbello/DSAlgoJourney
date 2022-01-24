@@ -1,4 +1,4 @@
-package targetSum;
+package canSum;
 
 public class CanSum {
 	public static void main(String args[]) {
