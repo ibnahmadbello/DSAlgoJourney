@@ -37,6 +37,4 @@ public class ZipperList {
 		head2.next = zipperListsWithRecursion(next1, next2);
 		return head1;
 	}
-	
-	
 }
